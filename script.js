@@ -62,52 +62,20 @@ function updateTime() {
     }
 }
 
-// Fetches and updates battery status
-async function updateBattery() {
-    if ('getBattery' in navigator) {
-        try {
-            const battery = await navigator.getBattery();
-            const batteryLevel = Math.round(battery.level * 100);
-            const batteryIcon = document.getElementById('batteryIcon');
-            const batteryLevelSpan = document.getElementById('batteryLevel');
+// Power Button Logic
+document.getElementById('powerBtn')?.addEventListener('click', () => {
+    // Attempt to close the window
+    window.close();
 
-            if (batteryLevelSpan) batteryLevelSpan.textContent = batteryLevel;
-
-            // Update icon and color based on level/charging
-            if (batteryIcon) {
-                if (battery.charging) {
-                    batteryIcon.innerHTML = `⚡ <span id="batteryLevel">${batteryLevel}</span>%`;
-                } else if (batteryLevel > 80) {
-                    batteryIcon.innerHTML = `🔋 <span id="batteryLevel">${batteryLevel}</span>%`;
-                } else if (batteryLevel > 50) {
-                    batteryIcon.innerHTML = `🔋 <span id="batteryLevel">${batteryLevel}</span>%`;
-                } else if (batteryLevel > 20) {
-                    batteryIcon.innerHTML = `🪫 <span id="batteryLevel">${batteryLevel}</span>%`;
-                } else {
-                    batteryIcon.innerHTML = `🪫 <span id="batteryLevel">${batteryLevel}</span>%`;
-                    batteryIcon.style.color = '#ff5f56';
-                }
-            }
-
-            // Listen for changes
-            battery.addEventListener('levelchange', () => updateBattery());
-            battery.addEventListener('chargingchange', () => updateBattery());
-        } catch (error) {
-            console.warn("Battery API error:", error);
-            // Fallback
-            const el = document.getElementById('batteryLevel');
-            if (el) el.textContent = '100';
-        }
-    } else {
-        // Fallback for unsupported browsers
-        const el = document.getElementById('batteryLevel');
-        if (el) el.textContent = '100';
+    // Fallback if window.close() is blocked (which is common)
+    const desktop = document.getElementById('desktop');
+    if (desktop) {
+        desktop.innerHTML = '<div style="height:100vh; display:flex; align-items:center; justify-content:center; color:white; background:black; flex-direction:column;"><h1>System Halted</h1><p>It is now safe to turn off your computer.</p></div>';
     }
-}
+});
 
 // Initialize system status
 updateTime();
-updateBattery();
 setInterval(updateTime, 1000);
 
 /* =========================================
