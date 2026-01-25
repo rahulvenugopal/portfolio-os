@@ -1,0 +1,786 @@
+/* 
+ * PORTFOLIO STYLESHEET
+ * ====================
+ * Main styling for the Desktop Environment portfolio.
+ * Organized by component for easier editing.
+ */
+
+/* =========================================
+   GLOBAL RESET & DEFAULTS
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', 'Segoe UI', Tahoma, sans-serif;
+    overflow: hidden;
+    background: #300a24;
+}
+
+/* Global Icon Glow for Phosphor Icons */
+.ph {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.3);
+    vertical-align: middle;
+    /* Ensure alignment with text */
+}
+
+/* =========================================
+   LOCK SCREEN
+   ========================================= */
+.lock-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Default gradient, will be overridden/blended by JS */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.lock-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.lock-time {
+    font-size: 72px;
+    color: white;
+    font-weight: 300;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    /* Added shadow for readability on images */
+}
+
+.lock-date {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 60px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.lock-prompt {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    animation: pulse 2s infinite;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* =========================================
+   DESKTOP ENVIRONMENT
+   ========================================= */
+.desktop {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: none;
+}
+
+.desktop.active {
+    display: block;
+}
+
+/* --- Top Bar --- */
+.top-bar {
+    height: 28px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    color: white;
+    font-size: 13px;
+}
+
+.top-bar-left {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.activities {
+    cursor: pointer;
+    padding: 2px 8px;
+    border-radius: 3px;
+    transition: background 0.2s;
+}
+
+.activities:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.top-bar-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.top-bar-right {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.system-icon {
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 3px;
+    transition: background 0.2s;
+}
+
+.system-icon:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Dock (Left Side) --- */
+.dock {
+    position: absolute;
+    left: 0;
+    top: 28px;
+    bottom: 0;
+    width: 70px;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    gap: 8px;
+}
+
+.dock-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 24px;
+}
+
+.dock-icon:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.dock-icon.active::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 30px;
+    background: #ff6b35;
+    border-radius: 0 2px 2px 0;
+}
+
+.dock-separator {
+    width: 40px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 5px 0;
+}
+
+/* =========================================
+   WINDOW MANAGEMENT
+   ========================================= */
+.window {
+    position: absolute;
+    background: #2c2c2c;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.window.active {
+    display: flex;
+    z-index: 100;
+}
+
+.window.maximized {
+    top: 28px !important;
+    left: 70px !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 0;
+}
+
+.window-header {
+    height: 35px;
+    background: #3c3c3c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    cursor: move;
+}
+
+.window-title {
+    color: #ddd;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.window-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.window-control {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    opacity: 0.4;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.window-control:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px currentColor;
+}
+
+.control-close {
+    background: rgba(255, 95, 86, 0.3);
+    color: #ff5f56;
+}
+
+.control-minimize {
+    background: rgba(255, 189, 46, 0.3);
+    color: #ffbd2e;
+}
+
+.control-maximize {
+    background: rgba(39, 201, 63, 0.3);
+    color: #27c93f;
+}
+
+.control-close:hover {
+    background: #ff5f56;
+}
+
+.control-minimize:hover {
+    background: #ffbd2e;
+}
+
+.control-maximize:hover {
+    background: #27c93f;
+}
+
+.window-content {
+    flex: 1;
+    overflow-y: auto;
+    background: #1e1e1e;
+    color: #d4d4d4;
+}
+
+/* =========================================
+   APPLICATION SPECIFIC STYLES
+   ========================================= */
+
+/* --- Terminal App --- */
+.terminal {
+    padding: 20px;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.terminal-prompt {
+    color: #4ec9b0;
+}
+
+.terminal-command {
+    color: #dcdcaa;
+}
+
+.terminal-output {
+    color: #d4d4d4;
+    white-space: pre-wrap;
+}
+
+.terminal-link {
+    color: #569cd6;
+    text-decoration: none;
+}
+
+.terminal-link:hover {
+    text-decoration: underline;
+}
+
+/* --- About App --- */
+.about-content {
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.profile-header {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    color: white;
+    flex-shrink: 0;
+    object-fit: cover;
+    /* Ensures image is cropped to circle */
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.profile-info h1 {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 32px;
+}
+
+.profile-info h2 {
+    color: #aaa;
+    font-weight: 400;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.profile-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.profile-link {
+    padding: 8px 16px;
+    background: rgba(102, 126, 234, 0.2);
+    border: 1px solid rgba(102, 126, 234, 0.5);
+    border-radius: 5px;
+    color: #667eea;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 14px;
+}
+
+.profile-link:hover {
+    background: rgba(102, 126, 234, 0.3);
+    border-color: #667eea;
+}
+
+.section {
+    margin-bottom: 35px;
+}
+
+.section-title {
+    color: #667eea;
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+}
+
+.section-content {
+    color: #ccc;
+    line-height: 1.8;
+}
+
+.education-item,
+.experience-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border-left: 3px solid #667eea;
+}
+
+.item-title {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.item-subtitle {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.item-duration {
+    color: #888;
+    font-size: 13px;
+    font-style: italic;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.skill-category {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.skill-category h4 {
+    color: #667eea;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.skill-category ul {
+    list-style: none;
+    color: #ccc;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.skill-category li::before {
+    content: '▸ ';
+    color: #667eea;
+}
+
+/* --- Files App --- */
+.files-content {
+    display: flex;
+    height: 100%;
+}
+
+.files-sidebar {
+    width: 200px;
+    background: #252526;
+    border-right: 1px solid #3c3c3c;
+    padding: 10px;
+}
+
+.files-main {
+    flex: 1;
+    padding: 20px;
+}
+
+.dock-icon:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(102, 126, 234, 0.6), inset 0 0 10px rgba(118, 75, 162, 0.4);
+    /* Halo Effect */
+}
+
+.folder-item {
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-bottom: 5px;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.folder-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.4);
+    /* Halo Effect */
+}
+
+.folder-item.active {
+    background: rgba(102, 126, 234, 0.2);
+    color: #667eea;
+}
+
+.file-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px;
+}
+
+.file-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.file-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.file-icon {
+    font-size: 48px;
+    margin-bottom: 8px;
+}
+
+.file-name {
+    font-size: 12px;
+    color: #ccc;
+    text-align: center;
+}
+
+/* --- Stats Dashboard --- */
+.stats-container {
+    padding: 30px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+    border-color: rgba(102, 126, 234, 0.6);
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    color: #aaa;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-description {
+    color: #888;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.progress-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 4px;
+    transition: width 1s ease;
+}
+
+/* --- Random Thoughts App --- */
+.thought-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid #667eea;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.thought-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateX(5px);
+}
+
+.thought-text {
+    color: #ddd;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.thought-meta {
+    color: #888;
+    font-size: 12px;
+}
+
+.animate-in {
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinning {
+    animation: spin 0.5s linear infinite;
+}
+
+/* =========================================
+   UI HELPERS & CONTEXT MENU
+   ========================================= */
+.context-menu {
+    position: fixed;
+    background: rgba(40, 40, 40, 0.98);
+    backdrop-filter: blur(10px);
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 5px;
+    display: none;
+    z-index: 2000;
+    min-width: 200px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.context-menu.active {
+    display: block;
+}
+
+.context-menu-item {
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
+    font-size: 13px;
+    color: #ddd;
+}
+
+.context-menu-item:hover {
+    background: rgba(102, 126, 234, 0.3);
+}
+
+.context-menu-separator {
+    height: 1px;
+    background: #555;
+    margin: 5px 0;
+}
+
+.footer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    /* Glassmorphism start */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 12px 30px;
+    border-radius: 50px;
+    /* Pill shape */
+    display: flex;
+    align-items: center;
+    /* Center icons vertically */
+    gap: 25px;
+    z-index: 500;
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    /* Icon size */
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+}
+
+.footer-link:hover {
+    color: #fff;
+    transform: translateY(-3px) scale(1.1);
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.footer-separator {
+    width: 1px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}

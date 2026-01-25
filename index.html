@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Rahul Venugopal - Cognitive Scientist</title>
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <!-- Lock Screen -->
+    <div class="lock-screen" id="lockScreen">
+        <div class="lock-time" id="lockTime">--:-- --</div>
+        <div class="lock-date" id="lockDate">Processing...</div>
+        <div class="lock-prompt">Click or Press any key to unlock</div>
+    </div>
+
+    <!-- Desktop Environment -->
+    <div class="desktop" id="desktop">
+
+        <!-- Top Navigation Bar -->
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <div class="activities" id="activitiesBtn">Activities</div>
+            </div>
+            <div class="top-bar-center" id="topBarTime">--</div>
+            <div class="top-bar-right">
+                <div class="system-icon" id="batteryIcon">🔋 <span id="batteryLevel">--</span>%</div>
+            </div>
+        </div>
+
+        <!-- Dock (Left Sidebar) -->
+        <div class="dock">
+            <div class="dock-icon" id="aboutIcon" title="About"><i class="ph ph-user"></i></div>
+            <div class="dock-separator"></div>
+            <div class="dock-icon" id="statsIcon" title="Research Stats"><i class="ph ph-chart-bar"></i></div>
+            <div class="dock-separator"></div>
+            <div class="dock-icon" id="filesIcon" title="Files"><i class="ph ph-folder"></i></div>
+            <div class="dock-separator"></div>
+            <div class="dock-icon" id="thoughtsIcon" title="Random Thoughts"><i class="ph ph-lightbulb"></i></div>
+        </div>
+
+        <!-- =========================================
+           APPLICATION WINDOWS
+           ========================================= -->
+
+        <!-- Files / Portfolio Window -->
+        <div class="window" id="filesWindow" style="top: 10vh; left: 20vw; width: 60vw; height: 75vh;">
+            <div class="window-header">
+                <div class="window-title"><i class="ph ph-folder"></i> Research Portfolio</div>
+                <div class="window-controls">
+                    <div class="window-control control-minimize" onclick="minimizeWindow('filesWindow')"></div>
+                    <div class="window-control control-maximize" onclick="toggleMaximize('filesWindow')"></div>
+                    <div class="window-control control-close" onclick="closeWindow('filesWindow')"></div>
+                </div>
+            </div>
+            <div class="window-content files-content">
+                <div class="files-sidebar">
+                    <div class="folder-item active" onclick="switchFolder('publications')"><i
+                            class="ph ph-file-text"></i> Publications</div>
+                    <div class="folder-item" onclick="switchFolder('research')"><i class="ph ph-flask"></i> Research
+                        Areas</div>
+                    <div class="folder-item" onclick="switchFolder('teaching')"><i class="ph ph-book"></i> Teaching
+                    </div>
+                    <div class="folder-item" onclick="switchFolder('awards')"><i class="ph ph-trophy"></i> Awards</div>
+                </div>
+                <div class="files-main" id="filesMain">
+                    <!-- Default Content: Publications -->
+                    <div class="file-grid">
+                        <div class="file-item" onclick="openTerminal('publications')">
+                            <div class="file-icon"><i class="ph ph-scroll"></i></div>
+                            <div class="file-name">Journal Papers (3)</div>
+                        </div>
+                        <div class="file-item" onclick="openTerminal('preprints')">
+                            <div class="file-icon"><i class="ph ph-file-dashed"></i></div>
+                            <div class="file-name">Preprints (10)</div>
+                        </div>
+                        <div class="file-item" onclick="openTerminal('conferences')">
+                            <div class="file-icon"><i class="ph ph-microphone-stage"></i></div>
+                            <div class="file-name">Conference Papers (47)</div>
+                        </div>
+                        <div class="file-item" onclick="openTerminal('phd')">
+                            <div class="file-icon"><i class="ph ph-graduation-cap"></i></div>
+                            <div class="file-name">PhD Thesis</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terminal Window -->
+        <div class="window" id="terminalWindow" style="top: 10vh; left: 20vw; width: 60vw; height: 75vh;">
+            <div class="window-header">
+                <div class="window-title"><i class="ph ph-terminal-window"></i> Terminal - rahul@nimhans</div>
+                <div class="window-controls">
+                    <div class="window-control control-minimize" onclick="minimizeWindow('terminalWindow')"></div>
+                    <div class="window-control control-maximize" onclick="toggleMaximize('terminalWindow')"></div>
+                    <div class="window-control control-close" onclick="closeWindow('terminalWindow')"></div>
+                </div>
+            </div>
+            <div class="window-content terminal" id="terminalContent">
+                <div><span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span class="terminal-command">cat
+                        README.md</span></div>
+                <div class="terminal-output">
+                    # Dr. Rahul Venugopal
+                    ## Cognitive Scientist | Centre for Consciousness Studies, NIMHANS
+
+                    Welcome to my research portfolio!
+
+                    I study the Sense of Self - how it emerges, fragments, and can be
+                    radically altered across different states of consciousness.
+
+                    Research Focus:
+                    • Neural oscillatory dynamics in cognition
+                    • Consciousness studies (meditation, sleep, altered states)
+                    • EEG/PSG signal processing and analysis
+                    • Non-invasive neuromodulation (tACS)
+                    • Brain-heart interactions (interoception)
+
+                    Contact: rhlvenugopal@gmail.com
+                    Website: <a href="https://rahulvenugopal.github.io/haveyoumetrahul/" class="terminal-link"
+                        target="_blank">rahulvenugopal.github.io/haveyoumetrahul/</a>
+                    GitHub: <a href="https://github.com/rahulvenugopal" class="terminal-link"
+                        target="_blank">github.com/rahulvenugopal</a>
+                    Scholar: <a href="https://scholar.google.com/citations?user=prTMUhkAAAAJ&hl" class="terminal-link"
+                        target="_blank">Google Scholar Profile</a>
+
+                    Type 'help' for available commands.
+                </div>
+                <div><span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span id="cursor">█</span></div>
+            </div>
+        </div>
+
+        <!-- About Window -->
+        <div class="window" id="aboutWindow" style="top: 10vh; left: 20vw; width: 60vw; height: 75vh;">
+            <div class="window-header">
+                <div class="window-title"><i class="ph ph-info"></i> About - Dr. Rahul Venugopal</div>
+                <div class="window-controls">
+                    <div class="window-control control-minimize" onclick="minimizeWindow('aboutWindow')"></div>
+                    <div class="window-control control-maximize" onclick="toggleMaximize('aboutWindow')"></div>
+                    <div class="window-control control-close" onclick="closeWindow('aboutWindow')"></div>
+                </div>
+            </div>
+            <div class="window-content about-content">
+                <div class="profile-header">
+                    <img src="me.jpg" class="profile-image" alt="Dr. Rahul Venugopal">
+                    <div class="profile-info">
+                        <h1>Dr. Rahul Venugopal</h1>
+                        <h2>Scientist (Cognitive Science) | NIMHANS, Bengaluru</h2>
+                        <p style="color: #aaa; max-width: 600px;">
+                            BTech, ME, MPhil, PGDMH, PhD in Cognitive Neurosciences
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Research Niche</h3>
+                    <div class="section-content">
+                        I am establishing my research niche at Centre for Consciousness Studies as a Cognitive
+                        scientist.
+                        The idea is to study the <strong>Sense of Self</strong> - how it emerges, how it fragments, and
+                        how
+                        it can be radically altered. My frameworks bridge neuroscience, psychiatry, technology and
+                        contemplative
+                        science to explore what happens when the boundaries of the self dissolve, distort, or
+                        expand—whether in
+                        schizophrenia, autism, lucid dreaming, altered states in mind-body practices like non-duality,
+                        out-of-body experiences, etc.
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Education</h3>
+                    <div class="education-item">
+                        <div class="item-title">Doctor of Philosophy (PhD) - Cognitive Neurosciences</div>
+                        <div class="item-subtitle">NIMHANS, Bengaluru, India</div>
+                        <div class="item-duration">2018 - 2024</div>
+                        <p style="margin-top: 8px; color: #aaa; font-size: 13px;">
+                            Thesis: Neural Oscillatory Dynamics and Cognition: A Neurophysiological Study
+                        </p>
+                    </div>
+                    <div class="education-item">
+                        <div class="item-title">Master of Philosophy (MPhil) - Neurosciences</div>
+                        <div class="item-subtitle">NIMHANS, Bengaluru, India</div>
+                        <div class="item-duration">2014 - 2016</div>
+                        <p style="margin-top: 8px; color: #aaa; font-size: 13px;">
+                            Dissertation: Assessment of EEG in Practitioners of Vipassana Meditation: A Non-Linear
+                            Analysis
+                        </p>
+                    </div>
+                    <div class="education-item">
+                        <div class="item-title">Master of Engineering (ME) - Medical Electronics</div>
+                        <div class="item-subtitle">College of Engineering Guindy, Chennai, India</div>
+                        <div class="item-duration">2011 - 2013</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Current Position</h3>
+                    <div class="experience-item">
+                        <div class="item-title">Scientist (Cognitive Science)</div>
+                        <div class="item-subtitle">Centre for Consciousness Studies, Dept. of Neurophysiology, NIMHANS
+                        </div>
+                        <div class="item-duration">July 2025 - Present</div>
+                        <p style="margin-top: 10px; color: #ccc; font-size: 13px;">
+                            Leading research on Sense of Self at Centre for Consciousness Studies
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Key Skills & Expertise</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Programming & Analysis</h4>
+                            <ul>
+                                <li>Python, R, MATLAB</li>
+                                <li>MNE-Python, EEGLAB</li>
+                                <li>Statistical modeling</li>
+                                <li>Machine learning</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Neuroimaging</h4>
+                            <ul>
+                                <li>High-density EEG (128ch)</li>
+                                <li>Polysomnography</li>
+                                <li>Event-related potentials</li>
+                                <li>Time-frequency analysis</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Neuromodulation</h4>
+                            <ul>
+                                <li>tACS protocols</li>
+                                <li>Closed-loop systems</li>
+                                <li>Real-time feedback</li>
+                                <li>Sleep stimulation</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Research Methods</h4>
+                            <ul>
+                                <li>Experimental design</li>
+                                <li>Signal processing</li>
+                                <li>Graph theory networks</li>
+                                <li>Non-linear dynamics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Notable Achievements</h3>
+                    <div class="section-content">
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 10px;">🏆 Full bursary for CIFAR Neuroscience of Consciousness
+                                Winter School, Mexico (₹5,50,000)</li>
+                            <li style="margin-bottom: 10px;">🌍 Selected as one of 16 global scholars for MESEC Workshop
+                                on Non-ordinary States, France (₹1,25,000)</li>
+                            <li style="margin-bottom: 10px;">🥇 Best poster award at EMBO Lecture Course, IIT
+                                Gandhinagar (₹10,000)</li>
+                            <li style="margin-bottom: 10px;">🧠 Winner of Royal Belgian Society Dataviz Challenge (2021)
+                            </li>
+                            <li style="margin-bottom: 10px;">📝 Winner of Dana Foundation Brain Trivia Writing
+                                Competition (2020)</li>
+                            <li style="margin-bottom: 10px;">🎯 Cleared NIMHANS PhD entrance with 2% selection rate
+                                (2018)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Publications Impact</h3>
+                    <div class="section-content"
+                        style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                        <div
+                            style="text-align: center; padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 8px;">
+                            <div style="font-size: 36px; color: #667eea; font-weight: bold;">3</div>
+                            <div style="color: #aaa; margin-top: 5px;">Journal Papers</div>
+                        </div>
+                        <div
+                            style="text-align: center; padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 8px;">
+                            <div style="font-size: 36px; color: #667eea; font-weight: bold;">10</div>
+                            <div style="color: #aaa; margin-top: 5px;">Preprints</div>
+                        </div>
+                        <div
+                            style="text-align: center; padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 8px;">
+                            <div style="font-size: 36px; color: #667eea; font-weight: bold;">47</div>
+                            <div style="color: #aaa; margin-top: 5px;">Conference Papers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Random Thoughts Window -->
+        <div class="window" id="thoughtsWindow" style="top: 10vh; left: 20vw; width: 60vw; height: 75vh;">
+            <div class="window-header">
+                <div class="window-title">💭 Random Thoughts - Brain Musings</div>
+                <div class="window-controls">
+                    <div class="window-control control-minimize" onclick="minimizeWindow('thoughtsWindow')"></div>
+                    <div class="window-control control-maximize" onclick="toggleMaximize('thoughtsWindow')"></div>
+                    <div class="window-control control-close" onclick="closeWindow('thoughtsWindow')"></div>
+                </div>
+            </div>
+            <div class="window-content" style="padding: 30px; overflow-y: auto;">
+                <div id="thoughtsContent">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <h2 style="color: #667eea; margin-bottom: 10px;">⚡ Synaptic Transmissions</h2>
+                        <p style="color: #888; font-size: 14px;">Intercepted signals from the edge of understanding</p>
+                        <button onclick="generateThought()"
+                            style="margin-top: 15px; padding: 10px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; border-radius: 5px; color: white; cursor: pointer; font-size: 14px; display: inline-flex; align-items: center; gap: 8px;">
+                            Generate New Thought <span id="diceSpinner" style="display: inline-block;">🎲</span>
+                        </button>
+                    </div>
+                    <div id="thoughtsList"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Research Stats Window -->
+        <div class="window" id="statsWindow" style="top: 10vh; left: 20vw; width: 60vw; height: 75vh;">
+            <div class="window-header">
+                <div class="window-title">📊 Research Statistics - Live Dashboard</div>
+                <div class="window-controls">
+                    <div class="window-control control-minimize" onclick="minimizeWindow('statsWindow')"></div>
+                    <div class="window-control control-maximize" onclick="toggleMaximize('statsWindow')"></div>
+                    <div class="window-control control-close" onclick="closeWindow('statsWindow')"></div>
+                </div>
+            </div>
+            <div class="window-content stats-container" style="overflow-y: auto;">
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                    <div class="stat-card" onclick="pulseCard(this)">
+                        <div class="stat-number">125+</div>
+                        <div class="stat-label">Polysomnography Studies</div>
+                        <div class="stat-description">Whole-night sleep recordings conducted</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card" onclick="pulseCard(this)">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Students Mentored</div>
+                        <div class="stat-description">Trainees and interns guided</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card" onclick="pulseCard(this)">
+                        <div class="stat-number">60</div>
+                        <div class="stat-label">Total Publications</div>
+                        <div class="stat-description">Journals, preprints, and conferences</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card" onclick="pulseCard(this)">
+                        <div class="stat-number">6.6L+</div>
+                        <div class="stat-label">Research Funding</div>
+                        <div class="stat-description">Travel grants and bursaries won</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card" onclick="pulseCard(this)">
+                        <div class="stat-number">128</div>
+                        <div class="stat-label">EEG Channels</div>
+                        <div class="stat-description">High-density brain recordings</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card" onclick="pulseCard(this)">
+                        <div class="stat-number">7</div>
+                        <div class="stat-label">Peer Reviews</div>
+                        <div class="stat-description">Journal articles reviewed</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    style="margin-top: 30px; padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 12px; border: 1px solid rgba(102, 126, 234, 0.3);">
+                    <h3 style="color: #667eea; margin-bottom: 15px;">🎯 Research Impact Timeline</h3>
+                    <div style="color: #ccc; font-size: 14px; line-height: 1.8;">
+                        <div style="margin-bottom: 10px;">📅 <strong>2024:</strong> CIFAR Scholar (Mexico) | MESEC
+                            Scholar (France) | EMBO Fellow (Portugal)</div>
+                        <div style="margin-bottom: 10px;">📅 <strong>2022:</strong> EMBO Best Poster Award | Best Paper
+                            Award ICBNA</div>
+                        <div style="margin-bottom: 10px;">📅 <strong>2021:</strong> Royal Belgian Society Dataviz Winner
+                        </div>
+                        <div style="margin-bottom: 10px;">📅 <strong>2018-2024:</strong> PhD Journey - Neural
+                            Oscillations & Cognition</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Context Menu -->
+        <div class="context-menu" id="contextMenu">
+            <div class="context-menu-item" onclick="openWindow('terminalWindow')">📂 Open Terminal</div>
+            <div class="context-menu-item" onclick="openWindow('aboutWindow')">ℹ️ About Me</div>
+            <div class="context-menu-separator"></div>
+            <div class="context-menu-item"
+                onclick="window.open('https://rahulvenugopal.github.io/haveyoumetrahul/', '_blank')">🌐 Visit Website
+            </div>
+            <div class="context-menu-item" onclick="window.open('https://github.com/rahulvenugopal', '_blank')">💻
+                GitHub Profile</div>
+            <div class="context-menu-item"
+                onclick="window.open('https://scholar.google.com/citations?user=prTMUhkAAAAJ&hl', '_blank')">🎓 Google
+                Scholar</div>
+            <div class="context-menu-separator"></div>
+            <div class="context-menu-item" onclick="resetUbuntu()">🔄 Reset Desktop</div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <a href="https://github.com/rahulvenugopal" class="footer-link" target="_blank" title="GitHub">
+                <i class="ph ph-github-logo"></i>
+            </a>
+            <div class="footer-separator"></div>
+            <a href="https://rahulvenugopal.github.io/haveyoumetrahul/" class="footer-link" target="_blank"
+                title="Website">
+                <i class="ph ph-globe"></i>
+            </a>
+            <div class="footer-separator"></div>
+            <a href="https://scholar.google.com/citations?user=prTMUhkAAAAJ&hl" class="footer-link" target="_blank"
+                title="Google Scholar">
+                <i class="ph ph-student"></i>
+            </a>
+            <div class="footer-separator"></div>
+            <a href="https://www.linkedin.com/in/rahul-venugopal-100b761b9/" class="footer-link" target="_blank"
+                title="LinkedIn">
+                <i class="ph ph-linkedin-logo"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- External Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
