@@ -328,16 +328,11 @@ function openTerminal(command) {
 
 📝 Journal Publications (n=3)
 
-1. <strong>Personalized Theta tACS and Gamma tACS bring Differential Neuromodulatory Effects</strong>
-   Neuromodulation: Technology at the Neural Interface (2024)
-   Authors: Rahul Venugopal, Arun Sasidharan, et al.
-
-2. <strong>Beyond Hypnograms: Assessing Sleep Stability Using Acoustic and Electrical Stimulation</strong>
-   Neuromodulation: Technology at the Neural Interface (2019)
-
-3. <strong>Dissociating meditation proficiency and experience dependent EEG changes</strong>
-   Biological Psychology (2018)
-   Study: Traditional Vipassana meditation practice
+<div style="margin-top: 15px; display: flex; flex-direction: column; gap: 10px;">
+    <a href="#" class="terminal-link" target="_blank">[1] Neural Oscillations & Cognition (Dummy Link)</a>
+    <a href="#" class="terminal-link" target="_blank">[2] Sleep & Memory Consolidation (Dummy Link)</a>
+    <a href="#" class="terminal-link" target="_blank">[3] Meditation & The Brain (Dummy Link)</a>
+</div>
 
 <span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span id="cursor">█</span>`;
             break;
@@ -348,13 +343,13 @@ function openTerminal(command) {
 
 📋 Recent Preprints (n=10)
 
-• Cross-Modal Computational Model of Brain-Heart Interactions (2026)
-• Unveiling the Heart-Brain Connection - ECG in Cognitive Performance (2026)
-• EEG Phase Slips in Novice Vipassana Meditators (bioRxiv 2025)
-• Similar States, Different Paths: Neurodynamics of diverse meditation (bioRxiv 2025)
-• Non-duality in Brain and Experience of Advanced Meditators (bioRxiv 2025)
-• Time-to-onset and temporal dynamics during breath-watching meditation (bioRxiv 2025)
-• The Balanced Mind and Intrinsic Neural Timescales (bioRxiv 2024)
+<div style="margin-top: 15px; display: flex; flex-direction: column; gap: 10px;">
+    <a href="#" class="terminal-link" target="_blank">• Cross-Modal Computational Model (bioRxiv)</a>
+    <a href="#" class="terminal-link" target="_blank">• Unveiling Heart-Brain Connections (bioRxiv)</a>
+    <a href="#" class="terminal-link" target="_blank">• EEG Phase Slips in Meditation (bioRxiv)</a>
+    <a href="#" class="terminal-link" target="_blank">• Non-duality in Advanced Meditators (bioRxiv)</a>
+    <a href="#" class="terminal-link" target="_blank">• Intrinsic Neural Timescales (bioRxiv)</a>
+</div>
 
 <span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span id="cursor">█</span>`;
             break;
@@ -364,9 +359,8 @@ function openTerminal(command) {
 <span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span class="terminal-command">cat phd_thesis/abstract.md</span>
 
 🎓 PhD Thesis (2018-2024)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Title: NEURAL OSCILLATORY DYNAMICS AND COGNITION: A NEUROPHYSIOLOGICAL STUDY
+Title: Neural Oscillatory Dynamics and Cognition: A neurophysiological Study
 
 Institution: NIMHANS, Bengaluru, India
 Degree: Doctor of Philosophy in Cognitive Neurosciences
@@ -818,15 +812,11 @@ function switchFolder(folder) {
                 <div class="file-grid">
                     <div class="file-item" onclick="openTerminal('publications')">
                         <div class="file-icon"><i class="ph ph-scroll"></i></div>
-                        <div class="file-name">Journal Papers (3)</div>
+                        <div class="file-name">Journal Papers</div>
                     </div>
                     <div class="file-item" onclick="openTerminal('preprints')">
                         <div class="file-icon"><i class="ph ph-file-dashed"></i></div>
                         <div class="file-name">Preprints (10)</div>
-                    </div>
-                    <div class="file-item" onclick="openTerminal('conferences')">
-                        <div class="file-icon"><i class="ph ph-microphone-stage"></i></div>
-                        <div class="file-name">Conference Papers (47)</div>
                     </div>
                     <div class="file-item" onclick="openTerminal('phd')">
                         <div class="file-icon"><i class="ph ph-graduation-cap"></i></div>
@@ -893,23 +883,27 @@ function switchFolder(folder) {
                 <div class="file-grid">
                     <div class="file-item">
                         <div class="file-icon"><i class="ph ph-trophy"></i></div>
-                        <div class="file-name">CIFAR Fellow (₹5.5L)</div>
+                        <div class="file-name">CIFAR Neuroscience of Consciousness Winter School at Mexico 🇲🇽</div>
                     </div>
                     <div class="file-item">
                         <div class="file-icon"><i class="ph ph-globe-hemisphere-west"></i></div>
-                        <div class="file-name">MESEC Scholar (₹1.25L)</div>
+                        <div class="file-name">MESEC workshop on Non-ordinary states of consciousness, France 🇫🇷</div>
                     </div>
                     <div class="file-item">
                         <div class="file-icon"><i class="ph ph-medal"></i></div>
-                        <div class="file-name">Best Poster EMBO</div>
+                        <div class="file-name">EMBO Summer School for Advanced Modeling of Behavior, Spain 🇪🇸</div>
                     </div>
                     <div class="file-item">
                         <div class="file-icon"><i class="ph ph-chart-pie-slice"></i></div>
-                        <div class="file-name">Dataviz Winner</div>
+                        <div class="file-name">Dataviz winner of Royal Belgian Society Dataviz challenge, Belgium 🇧🇪</div>
                     </div>
                     <div class="file-item">
                         <div class="file-icon"><i class="ph ph-pen-nib"></i></div>
-                        <div class="file-name">Brain Trivia Winner</div>
+                        <div class="file-name">Brain Trivia winner, Dana Foundation 🇺🇸</div>
+                    </div>
+                    <div class="file-item">
+                        <div class="file-icon"><i class="ph ph-scroll"></i></div>
+                        <div class="file-name">Full Fellowships for MPhil and PhD (Monthly Stipends) 🇮🇳</div>
                     </div>
                 </div>`;
             break;
