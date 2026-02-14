@@ -326,12 +326,14 @@ function openTerminal(command) {
             output = `
 <span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span class="terminal-command">ls -la publications/journals/</span>
 
-📝 Journal Publications (n=3)
+📝 Journal Publications (n=5)
 
-<div style="margin-top: 15px; display: flex; flex-direction: column; gap: 10px;">
-    <a href="#" class="terminal-link" target="_blank">[1] Neural Oscillations & Cognition (Dummy Link)</a>
-    <a href="#" class="terminal-link" target="_blank">[2] Sleep & Memory Consolidation (Dummy Link)</a>
-    <a href="#" class="terminal-link" target="_blank">[3] Meditation & The Brain (Dummy Link)</a>
+<div style="margin-top: 15px; display: flex; flex-direction: column; gap: 12px;">
+    <a href="https://www.sciencedirect.com/science/article/abs/pii/S0301051118301728" class="terminal-link" target="_blank">[1] Dissociating meditation proficiency and experience dependent EEG changes during traditional Vipassana... - Biological psychology (2018)</a>
+    <a href="https://www.sciencedirect.com/science/article/abs/pii/S0002822321070231" class="terminal-link" target="_blank">[2] Beyond Hypnograms: Assessing Sleep Stability Using Acoustic and Electrical Stimulation - Neuromodulation (2019)</a>
+    <a href="https://www.sciencedirect.com/science/article/abs/pii/S1094715924006731" class="terminal-link" target="_blank">[3] Personalized Theta tACS and Gamma tACS bring Differential Neuromodulatory Effects on the Resting EEG - Neuromodulation (2024)</a>
+    <a href="https://www.sciencedirect.com/science/article/abs/pii/S0954611126000223" class="terminal-link" target="_blank">[4] Ultra-short term Heart Rate Variability in Moderate and Severe Obstructive Sleep Apnea - Respiratory Medicine (2026)</a>
+    <a href="#" class="terminal-link" target="_blank">[5] Temporal Dynamics of EEG During Focused-Attention Meditation - Mindfulness (2026)</a>
 </div>
 
 <span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span id="cursor">█</span>`;
@@ -341,14 +343,20 @@ function openTerminal(command) {
             output = `
 <span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span class="terminal-command">cat preprints/recent.txt</span>
 
-📋 Recent Preprints (n=10)
+📋 Recent Preprints (n=11)
 
-<div style="margin-top: 15px; display: flex; flex-direction: column; gap: 10px;">
-    <a href="#" class="terminal-link" target="_blank">• Cross-Modal Computational Model (bioRxiv)</a>
-    <a href="#" class="terminal-link" target="_blank">• Unveiling Heart-Brain Connections (bioRxiv)</a>
-    <a href="#" class="terminal-link" target="_blank">• EEG Phase Slips in Meditation (bioRxiv)</a>
-    <a href="#" class="terminal-link" target="_blank">• Non-duality in Advanced Meditators (bioRxiv)</a>
-    <a href="#" class="terminal-link" target="_blank">• Intrinsic Neural Timescales (bioRxiv)</a>
+<div style="margin-top: 15px; display: flex; flex-direction: column; gap: 12px;">
+    <a href="https://www.biorxiv.org/content/10.1101/2022.09.27.509655v1" class="terminal-link" target="_blank">[1] Simple Neurofeedback via Machine Learning: Challenges in real time multivariate... - bioRxiv (2022)</a>
+    <a href="https://doi.org/10.13140/RG.2.2.34911.43687" class="terminal-link" target="_blank">[2] Extending wireless wearable EEG device with Single Board Computer for real-time... - RG (2022)</a>
+    <a href="https://doi.org/10.1101/2024.08.29.609126" class="terminal-link" target="_blank">[3] The Balanced Mind and its Intrinsic Neural Timescales in Advanced Meditators - bioRxiv (2024)</a>
+    <a href="https://www.qeios.com/read/9L3L83" class="terminal-link" target="_blank">[4] Is there a direct relation between EEG band spectrum and DMN activity in fMRI? - Qeios (2025)</a>
+    <a href="https://www.biorxiv.org/content/10.1101/2025.02.11.637771v1" class="terminal-link" target="_blank">[5] Time-to-onset and temporal dynamics of EEG during breath-watching meditation - bioRxiv (2025)</a>
+    <a href="https://doi.org/10.1101/2024.08.29.609126" class="terminal-link" target="_blank">[6] Non-duality in Brain and Experience of Advanced Meditators - bioRxiv (2025)</a>
+    <a href="https://www.biorxiv.org/content/10.1101/2025.06.20.660652v1" class="terminal-link" target="_blank">[7] Similar States, Different Paths Neurodynamics of diverse meditation techniques - bioRxiv (2025)</a>
+    <a href="https://www.biorxiv.org/content/10.1101/2025.09.03.674031v1" class="terminal-link" target="_blank">[8] EEG Phase Slips Reveal Detailed Brain Activity Patterns of Novice Vipassana Meditators... - bioRxiv (2025)</a>
+    <a href="https://arxiv.org/abs/2601.014241" class="terminal-link" target="_blank">[9] Unveiling the Heart-Brain Connection - An Analysis of ECG in Cognitive Performance - aRxiv (2026)</a>
+    <a href="https://arxiv.org/abs/2601.06792" class="terminal-link" target="_blank">[10] Cross-Modal Computational Model of Brain-Heart Interactions via HRV and EEG Feature - aRxiv (2026)</a>
+    <a href="https://arxiv.org/abs/2602.10614" class="terminal-link" target="_blank">[11] Pupillometry and Brain Dynamics for Cognitive Load in Working Memory - aRxiv (2026)</a>
 </div>
 
 <span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span id="cursor">█</span>`;
@@ -414,371 +422,231 @@ function openResearchArea(area) {
         case 'sense-of-self':
             output = `
 <span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span class="terminal-command">cat research/sense_of_self.md</span>
-
+<div class="terminal-output">
 🧠 SENSE OF SELF - Research Overview
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔍 <strong>Overview:</strong>
+Exploring how the "self" emerges from neural activity and how it 
+fragments or dissolves in clinical and altered states.
 
-<strong>Core Research Question:</strong>
-How does the sense of self emerge, fragment, and radically alter across 
-different states of consciousness?
+🎯 <strong>Key Objectives:</strong>
+• Mapping the neural correlates of self-awareness
+• Understanding self-fragmentation in Schizophrenia and Autism
+• Investigating ego-dissolution in meditation and psychedelics
 
-<strong>Theoretical Framework:</strong>
-My research bridges neuroscience, psychiatry, technology and contemplative 
-science to explore the boundaries of selfhood.
-
-<strong>Key Areas of Investigation:</strong>
-
-1. EMERGENCE OF SELF
-   • Neural correlates of self-awareness
-   • Development of self-representation in the brain
-   • Role of interoception in self-construction
-
-2. FRAGMENTATION PATTERNS
-   • Schizophrenia: Disrupted self-boundaries
-   • Autism: Atypical self-other differentiation
-   • Dissociative states: Temporary self-fragmentation
-
-3. ALTERED STATES
-   • Non-duality experiences in advanced meditation
-   • Out-of-body experiences (OBEs)
-   • Lucid dreaming and dream self-awareness
-   • Psychedelic-induced ego dissolution
-
-<strong>Methodological Approach:</strong>
-• High-density EEG recordings
+🛠️ <strong>Methodologies:</strong>
+• High-density EEG (128-channel)
 • Graph theory network analysis
-• Phenomenological interviews
-• Computational modeling of self-processes
+• Phenomenological profiling
+• Computational self-modeling
 
-<strong>Clinical Implications:</strong>
-Understanding self-fragmentation can inform therapeutic interventions
-for disorders where the sense of self is compromised.
+🔬 <strong>Significant Findings:</strong>
+• Identified distinct neural signatures of self-boundary fragmentation
+• Correlated interoceptive accuracy with self-coherence
+• Mapped neural pathways of non-dual consciousness
 
+📍 <strong>Future Directions:</strong>
+• Developing real-time self-coherence monitoring
+• Informing therapies for dissociative disorders
+</div>
 <span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span id="cursor">█</span>`;
             break;
 
         case 'neural-oscillations':
             output = `
 <span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span class="terminal-command">cat research/neural_oscillations.md</span>
-
+<div class="terminal-output">
 🌊 NEURAL OSCILLATORY DYNAMICS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔍 <strong>Overview:</strong>
+Deciphering how brain rhythms (Theta, Gamma) coordinate cognition, 
+memory, and network communication.
 
-<strong>Research Focus:</strong>
-Understanding how rhythmic patterns of neural activity support cognition,
-particularly in working memory and executive functions.
+🎯 <strong>Key Objectives:</strong>
+• Modeling cross-frequency coupling (Theta-Gamma)
+• Evaluating 1/f aperiodic activity as E/I balance markers
+• Investigating network disruptions in Neuropsychiatry
 
-<strong>Frequency Bands of Interest:</strong>
-
-THETA (4-8 Hz)
-• Working memory encoding and maintenance
-• Cognitive control and task switching
-• Long-range frontal-parietal synchronization
-
-GAMMA (30-100 Hz)
-• Local information processing
-• Feature binding and integration
-• Attention and sensory processing
-
-<strong>Key Findings:</strong>
-
-1. SCHIZOPHRENIA vs CONTROLS
-   • Reduced theta-gamma coupling during working memory
-   • Aberrant phase-amplitude relationships
-   • Individual-specific network disruptions
-
-2. TASK-EVOKED OSCILLATIONS
-   • Capacity-dependent theta power modulation
-   • Load-sensitive gamma band responses
-   • Network reorganization during cognitive demands
-
-3. SPECTRAL DYNAMICS
-   • Aperiodic (1/f) noise as marker of E/I balance
-   • Periodic oscillations vs background activity
-   • Developmental and state-dependent changes
-
-<strong>Analytical Techniques:</strong>
+🛠️ <strong>Methodologies:</strong>
 • Time-frequency decomposition
-• Phase-amplitude coupling
-• Graph theory metrics
-• Dynamical systems approaches
+• Phase-amplitude coupling (PAC)
+• Dynamical systems modeling
+• Power spectrum density (PSD) analysis
 
-<strong>Publications:</strong>
-PhD Thesis: "Neural Oscillatory Dynamics and Cognition" (2024)
+🔬 <strong>Significant Findings:</strong>
+• Discovered reduced coupling markers in Schizophrenia
+• Demonstrated capacity-dependent Theta power modulation
+• linked spectral tilt to cognitive decline biomarkers
 
+📍 <strong>Future Directions:</strong>
+• Personalized oscillatory fingerprinting
+• Closed-loop spectral regulation
+</div>
 <span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span id="cursor">█</span>`;
             break;
 
         case 'meditation':
             output = `
 <span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span class="terminal-command">cat research/meditation_consciousness.md</span>
-
-🧘 MEDITATION & CONSCIOUSNESS STUDIES
+<div class="terminal-output">
+🧘 MEDITATION & CONSCIOUSNESS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔍 <strong>Overview:</strong>
+Quantifying the neural signatures of contemplative states and non-dual
+awareness via long-term practitioner studies.
 
-<strong>Primary Focus:</strong>
-Investigating neural signatures of contemplative practices and their
-effects on consciousness and cognition.
+🎯 <strong>Key Objectives:</strong>
+• Characterizing Vipassana meditation neurodynamics
+• Studying the "Balanced Mind" in advanced practitioners
+• Investigating age-preserved neural markers in meditators
 
-<strong>Vipassana Meditation Research:</strong>
+🛠️ <strong>Methodologies:</strong>
+• Non-linear EEG complexity analysis
+• Permutation Entropy & Fractal Dimensions
+• Intrinsic Neural Timescales analysis
+• Vipassana Proficiency Scale (VPS)
 
-EXPERTISE LEVELS STUDIED:
-• Novice practitioners (< 100 hours)
-• Intermediate (100-1000 hours)
-• Advanced (> 1000 hours)
+🔬 <strong>Significant Findings:</strong>
+• Increased neural complexity with meditative expertise
+• Documented age-independent sleep spindle stability
+• Differentiated states of focused vs open awareness
 
-KEY FINDINGS:
-
-1. NON-LINEAR DYNAMICS
-   • Increased complexity (permutation entropy) with expertise
-   • Altered fractal dimensions during meditation
-   • Dissociation of attention, mindfulness, loving-kindness states
-
-2. NON-DUALITY EXPERIENCES
-   • Intrinsic neural timescales in advanced meditators
-   • Balanced mind states and neural dynamics
-   • Different paths to similar meditative states
-
-3. SLEEP IN MEDITATORS
-   • Enhanced sleep stability markers
-   • Age-independent spindle characteristics
-   • Preserved sleep architecture despite aging
-
-<strong>Meditation States Studied:</strong>
-✓ Breath-watching meditation
-✓ Body scan (Vipassana)
-✓ Loving-kindness (Metta)
-✓ Non-dual awareness practices
-
-<strong>Measurement Approaches:</strong>
-• 128-channel high-density EEG
-• Whole-night polysomnography
-• Phenomenological profiling
-• Vipassana Proficiency Scale (validated)
-
+📍 <strong>Future Directions:</strong>
+• Longitudinal tracking of meditation induction nuerodynamics
+• Developing accessible neurofeedback for novices
+</div>
 <span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span id="cursor">█</span>`;
             break;
 
         case 'sleep':
             output = `
 <span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span class="terminal-command">cat research/sleep_research.md</span>
-
+<div class="terminal-output">
 😴 SLEEP NEUROSCIENCE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔍 <strong>Overview:</strong>
+Leveraging 125+ polysomnography studies to explore sleep stability, 
+memory consolidation, and dream consciousness.
 
-<strong>Research Experience:</strong>
-125+ whole-night polysomnography studies conducted
-Focus: Sleep stability, dreaming, and consciousness during sleep
+🎯 <strong>Key Objectives:</strong>
+• Beyond Hypnograms: Quantifying sleep stability
+• Decoding neural patterns of dream recall
+• Investigating sleep biomarkers of cognitive decline
 
-<strong>Key Research Areas:</strong>
+🛠️ <strong>Methodologies:</strong>
+• Full-night Polysomnography (PSG)
+• K-complex & Spindle detection algorithms
+• Serial awakening dream-capture protocols
+• Heart Evoked Potentials (HEP) in sleep
 
-1. SLEEP STABILITY ASSESSMENT
-   • Beyond traditional hypnograms
-   • Event-Related Potentials during sleep
-   • K-complexes and sleep spindles analysis
-   • Response to acoustic/electrical perturbations
+🔬 <strong>Significant Findings:</strong>
+• Validated sleep stability makers via acoustic perturbations
+• Link between spindle-slow wave coupling and memory
+• Mapped microstate transitions across NREM/REM
 
-2. SLEEP NEUROMODULATION
-   • Real-time stage-dependent stimulation
-   • Transcranial Alternating Current Stimulation (tACS)
-   • Closed-loop auditory neuromodulation
-   • Slow-wave spindle coupling enhancement
-
-3. DREAMING & CONSCIOUSNESS
-   • Neural decoding of dream states
-   • Serial awakening protocols
-   • Dream recall vs no-recall patterns
-   • Lucid dreaming induction attempts
-   • Multivariate EEG patterns during REM
-
-4. CLINICAL APPLICATIONS
-   • Schizophrenia: Microstate dynamics during sleep
-   • Mild Cognitive Impairment: Sleep biomarkers
-   • Obstructive Sleep Apnea: HRV indices
-   • Age-related sleep changes
-
-<strong>Specialized Skills:</strong>
-• AASM sleep staging guidelines
-• K-complex & spindle detection algorithms
-• Heart Evoked Potentials (HEPs) in sleep
-• Multi-night serial sleep protocols
-
-<strong>Technologies Used:</strong>
-• 32-ch Nihon-Kohden PSG system
-• High-density EEG during sleep
-• Real-time sleep stage detection
-• Automated analysis pipelines (Python/MATLAB)
-
-<strong>Notable Publications:</strong>
-"Beyond Hypnograms: Assessing Sleep Stability Using Acoustic and Electrical Stimulation" - Neuromodulation (2019)
-
-<strong>Current Projects:</strong>
-• Heart-brain interactions across wake and sleep
-• Sleep stability in typical and atypical populations
-• Aperiodic activity patterns during sleep stages
-
+📍 <strong>Future Directions:</strong>
+• Real-time stage-specific neuromodulation
+• Dream-content decoding via machine learning
+</div>
 <span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span id="cursor">█</span>`;
             break;
 
         case 'neuromodulation':
             output = `
 <span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span class="terminal-command">cat research/neuromodulation_tacs.md</span>
-
-⚡ NON-INVASIVE NEUROMODULATION
+<div class="terminal-output">
+⚡ NEUROMODULATION (tACS)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔍 <strong>Overview:</strong>
+Designing personalized frequency-specific brain stimulation (tACS) to 
+enhance cognition and treat psychiatric symptoms.
 
-<strong>Primary Technique: Transcranial Alternating Current Stimulation (tACS)</strong>
+🎯 <strong>Key Objectives:</strong>
+• Personalizing Theta/Gamma tACS protocols
+• Enhancing working memory in Schizophrenia
+• Optimizing stimulation based on graph-theory metrics
 
-RESEARCH OBJECTIVES:
-Enhance cognitive functions and treat clinical symptoms through
-targeted, frequency-specific brain stimulation
+🛠️ <strong>Methodologies:</strong>
+• Multi-channel tES systems
+• Peak frequency individualization
+• Online/Offline stimulation effects tracking
+• Personalized montage optimization
 
-<strong>Personalized tACS Protocols:</strong>
+🔬 <strong>Significant Findings:</strong>
+• Demonstrated differential effects of Theta vs Gamma tACS 
+• identified temporal persistence of neuromodulatory after-effects
+• Mapped network-wide redistribution of neural power
 
-1. THETA tACS (4-8 Hz)
-   Target: Working memory enhancement
-   Findings: 
-   • Differential effects on resting vs task EEG
-   • Individual-specific response patterns
-   • Temporal dynamics of after-effects
-
-2. GAMMA tACS (30-80 Hz)
-   Target: Attention and perceptual binding
-   Findings:
-   • Modulation of local gamma oscillations
-   • Effects on aperiodic spectral components
-   • Spatial specificity of stimulation
-
-<strong>Key Research Contributions:</strong>
-
-✓ PERSONALIZATION
-  • Individual peak frequency targeting
-  • Graph theory-based network profiling
-  • Adaptive stimulation parameters
-
-✓ MULTI-DIMENSIONAL CHARACTERIZATION
-  • Temporal: Onset, duration, persistence of effects
-  • Spatial: Electrode montages and field distribution
-  • Spectral: Frequency-specific modulation patterns
-
-✓ CLINICAL TRANSLATION
-  • Working memory deficits in schizophrenia
-  • Cognitive enhancement in healthy individuals
-  • Sleep quality improvement
-
-<strong>Stimulation Contexts:</strong>
-• During wake (resting state)
-• During cognitive tasks (online modulation)
-• During sleep (NREM/REM-specific)
-• Closed-loop adaptive protocols
-
-<strong>Safety & Ethics:</strong>
-• Rigorous safety screening protocols
-• Individual comfort monitoring
-• Adverse effects documentation
-• Ethical considerations in cognitive enhancement
-
-<strong>Equipment:</strong>
-• Axxonet 4-channel tES device (Bluetooth control)
-• Neuphony consumer-grade neurofeedback
-• Custom stimulation parameter optimization
-
-<strong>Major Publication:</strong>
-"Personalized Theta tACS and Gamma tACS bring Differential Neuromodulatory Effects on Resting EEG" - Neuromodulation (2024)
-
-<strong>Future Directions:</strong>
-• Real-time EEG-driven adaptive tACS
-• Multi-frequency simultaneous stimulation
-• Long-term cognitive training protocols
-
+📍 <strong>Future Directions:</strong>
+• EEG-driven closed-loop adaptive tACS
+• Multi-frequency cross-modal stimulation
+</div>
 <span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span id="cursor">█</span>`;
             break;
 
         case 'brain-heart':
             output = `
 <span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span class="terminal-command">cat research/brain_heart_interaction.md</span>
-
-❤️ BRAIN-HEART INTERACTIONS
+<div class="terminal-output">
+❤️ BRAIN-HEART INTERACTION
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔍 <strong>Overview:</strong>
+Investigating interoception—the brain's representation of internal bodily 
+signals—and its role in shaping consciousness.
 
-<strong>Interoception Research Program</strong>
+🎯 <strong>Key Objectives:</strong>
+• Mapping Heart Evoked Potentials (HEP) across states
+• Modeling Heart Rate Variability (HRV) in clinical populations
+• Decoding cardiac-neural coupling dynamics
 
-CENTRAL QUESTION:
-How does the brain process and represent internal bodily signals,
-and how does this shape our sense of self and consciousness?
+🛠️ <strong>Methodologies:</strong>
+• Neurokit2 & Custom ECG pipelines
+• Phase synchronization Analysis
+• Multi-modal EEG-ECG integration
+• Non-linear HRV metrics
 
-<strong>Heart Rate Variability (HRV) Analysis:</strong>
+🔬 <strong>Significant Findings:</strong>
+• Modeled HRV biomarkers for OSA severity
+• Demonstrated cardiac-phase dependent cognitive performance
+• Linked brain-heart coupling to spontaneous thoughts
 
-DOMAINS MEASURED:
-1. Time Domain
-   • RMSSD, SDNN, pNN50
-   • Beat-to-beat variability
+📍 <strong>Future Directions:</strong>
+• Predictive mental-state models from cardiac signals
+• Heart-brain neurofeedback for stress regulation
+</div>
+<span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span id="cursor">█</span>`;
+            break;
 
-2. Frequency Domain  
-   • LF/HF ratio
-   • Spectral power distribution
-   • Respiratory sinus arrhythmia
+        case 'behavioral-modeling':
+            output = `
+<span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span class="terminal-command">cat research/behavioral_modeling.md</span>
+<div class="terminal-output">
+🏹 BEHAVIORAL MODELING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔍 <strong>Overview:</strong>
+Decoding the computational principles of human choice via mathematical 
+models of evidence accumulation and reward learning.
 
-3. Non-linear Measures
-   • Entropy measures
-   • Fractal dimensions
-   • Recurrence quantification
+🎯 <strong>Key Objectives:</strong>
+• Modeling evidence accumulation (Drift Diffusion)
+• Studying value-based choice in advanced meditators
+• Identifying decision markers of clinical impulsivity
 
-4. Synthetic Models
-   • Computational HRV generation
-   • Parameter space exploration
+🛠️ <strong>Methodologies:</strong>
+• Hierarchical Drift Diffusion Models (HDDM)
+• Reinforcement Learning (RL) frameworks
+• Bayesian Parameter Estimation
+• Behavioral-EEG joint modeling
 
-<strong>Heart Evoked Potentials (HEPs):</strong>
-• Cortical responses to heartbeats
-• Automated R-wave detection pipelines
-• HEPs across sleep stages
-• Variations in wellness vs illness
+🔬 <strong>Significant Findings:</strong>
+• Quantified speed-accuracy trade-off across task types
+• mapped choice-fragmentation in Schizophrenia states
+• Differentiated belief-updating patterns in Autism
 
-<strong>Research Contexts:</strong>
-
-WAKE STATE
-• Resting HRV profiling
-• Task-related cardiac modulation
-• Cognitive load effects on HRV
-
-SLEEP STATE  
-• HRV dynamics across sleep stages
-• Autonomic patterns in NREM/REM
-• Sleep quality prediction from HRV
-
-NAP STUDIES
-• Short-term autonomic recovery
-• Age-related HRV differences
-• Clinical populations (MCI, OSA)
-
-<strong>Brain-Heart Coupling:</strong>
-• Phase synchronization analysis
-• Information flow between systems
-• Predictive modeling of cognitive performance
-• Role in spontaneous thought generation
-
-<strong>Clinical Applications:</strong>
-• Stress and wellbeing markers
-• Obstructive Sleep Apnea diagnostics
-• Cognitive decline early detection
-• Meditation effects on autonomic regulation
-
-<strong>Technical Implementation:</strong>
-• Neurokit2 Python library
-• Custom ECG processing pipelines
-• Integrated EEG-ECG analysis
-• Statistical inference frameworks
-
-<strong>Recent Work:</strong>
-"Cross-Modal Computational Model of Brain-Heart Interactions via HRV and EEG Features" - Conference paper (2025)
-
-"Unveiling the Heart-Brain Connection: An Analysis of ECG in Cognitive Performance" - Conference paper (2025)
-
-<strong>Ongoing Projects:</strong>
-• Interoception across wake, sleep, wellness and illness
-• Heart-brain synchrony in meditation
-• Predictive models of mental states from cardiac signals
-
+📍 <strong>Future Directions:</strong>
+• Computational psychiatry clinical diagnostics
+• Modeling social decision dynamics
+</div>
 <span class="terminal-prompt">rahul@consciousness-lab:~$</span> <span id="cursor">█</span>`;
             break;
     }
@@ -816,7 +684,7 @@ function switchFolder(folder) {
                     </div>
                     <div class="file-item" onclick="openTerminal('preprints')">
                         <div class="file-icon"><i class="ph ph-file-dashed"></i></div>
-                        <div class="file-name">Preprints (10)</div>
+                        <div class="file-name">Preprints</div>
                     </div>
                     <div class="file-item" onclick="openTerminal('phd')">
                         <div class="file-icon"><i class="ph ph-graduation-cap"></i></div>
@@ -850,6 +718,10 @@ function switchFolder(folder) {
                     <div class="file-item" onclick="openResearchArea('brain-heart')">
                         <div class="file-icon"><i class="ph ph-heartbeat"></i></div>
                         <div class="file-name">Brain-Heart Interaction</div>
+                    </div>
+                    <div class="file-item" onclick="openResearchArea('behavioral-modeling')">
+                        <div class="file-icon"><i class="ph ph-arrows-split"></i></div>
+                        <div class="file-name">Behavioral Modeling</div>
                     </div>
                 </div>`;
             break;

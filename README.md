@@ -1,7 +1,26 @@
-# Portfolio
+# 🧠 Dr. Rahul Venugopal - Portfolio OS
 
 A unique, interactive **Desktop Environment** portfolio for Dr. Rahul Venugopal, a Cognitive Scientist at NIMHANS. This project mimics an Ubuntu-like interface to showcase research, publications, and thoughts in a playful, engaging way.
 
-This idea did not originate in my head. All creadits goes to [this repo](https://github.com/PortfolioOS)
+## 🌟 Features
+
+- **Desktop Interface:** Fully functional desktop with a dock, taskbar, and wallpaper.
+- **Window Management:** Draggable, minimizing, maximizing, and cascading windows.
+- **Interactive Apps:**
+  - **📁 Files:** Browse publications, research areas, and awards.
+  - **⌨️ Terminal:** Execute commands like `cat`, `ls`, and `whoami`.
+  - **📊 Stats:** Live dashboard of research statistics with animations.
+  - **💭 Synaptic Transmissions:** A random thought generator with a spinning dice animation.
+  - **👨‍🔬 About:** Researcher profile and bio.
+- **Polished UI:** Glassmorphism effects, Phosphor icons, and smooth animations.
+
+## 🛠️ Built With
+
+- **HTML5**
+- **CSS3** (Glassmorphism, Animations, Flexbox/Grid)
+- **JavaScript (ES6+)** (Window logic, Random generators, DOM manipulation)
+- **Phosphor Icons**
+
+## 📄 License
 
 © 2026 Dr. Rahul Venugopal. All rights reserved.
